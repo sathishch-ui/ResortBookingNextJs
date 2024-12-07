@@ -6,22 +6,21 @@ import { registerAction } from "../serverActions/registerActions";
 const RegisterForm = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    
-    const registerHandler = async (e) => {
-        e.preventDefault()
-        const userRegistrationDetails = { username, email, password }
-        console.log(userRegistrationDetails)
-        try {
-            const response = await registerAction(userRegistrationDetails);
-            if (response.success) {
-                alert('User Registered Successfully')
-            }
-        }
-        catch (error) {
-            console.log(error)
-        }
+  const [password, setPassword] = useState("");
+
+  const registerHandler = async (e) => {
+    e.preventDefault();
+    const userRegistrationDetails = { username, email, password };
+    console.log(userRegistrationDetails);
+    try {
+      const response = await registerAction(userRegistrationDetails);
+      if (response.success) {
+        alert("User Registered Successfully");
+      }
+    } catch (error) {
+      console.log(error);
     }
+  };
 
   return (
     <div className="formContainer">
